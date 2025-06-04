@@ -12,42 +12,42 @@ const skillCards: SkillCard[] = [
   {
     icon: <SiDotnet className="w-16 h-16 text-purple-600" />,
     name: "C#/.NET",
-    description: "Desenvolvimento de aplicações robustas e escaláveis com C# e .NET Framework/Core"
+    description: "Development of robust and scalable applications with C# and .NET Framework/Core"
   },
   {
     icon: <FaHtml5 className="w-16 h-16 text-orange-500" />,
     name: "HTML",
-    description: "Estruturação de páginas web semânticas e acessíveis"
+    description: "Structuring semantic and accessible web pages"
   },
   {
     icon: <FaCss3Alt className="w-16 h-16 text-blue-500" />,
     name: "CSS",
-    description: "Estilização e layouts responsivos com CSS moderno"
+    description: "Modern CSS styling and responsive layouts"
   },
   {
     icon: <SiJavascript className="w-16 h-16 text-yellow-400" />,
     name: "JavaScript",
-    description: "Desenvolvimento front-end e back-end com JavaScript"
+    description: "Front-end and back-end development with JavaScript"
   },
   {
     icon: <FaReact className="w-16 h-16 text-cyan-400" />,
     name: "React.js",
-    description: "Criação de interfaces modernas e interativas com React"
+    description: "Creation of modern and interactive interfaces with React"
   },
   {
     icon: <FaDatabase className="w-16 h-16 text-red-600" />,
     name: "SQL Server",
-    description: "Gerenciamento e otimização de bancos de dados SQL Server"
+    description: "SQL Server database management and optimization"
   },
   {
     icon: <SiMysql className="w-16 h-16 text-blue-600" />,
     name: "MySQL",
-    description: "Desenvolvimento e administração de bancos de dados MySQL"
+    description: "MySQL database development and administration"
   },
   {
     icon: <FaDocker className="w-16 h-16 text-blue-400" />,
     name: "Docker",
-    description: "Containerização e orquestração de aplicações"
+    description: "Application containerization and orchestration"
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Skills() {
             Skills <span className="text-blue-600">.</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            *passe o cursor do mouse no card para ler*
+            *hover over the card to read*
           </p>
         </div>
 
