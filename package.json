@@ -1,7 +1,7 @@
 {
   "name": "vite-react-typescript-starter",
   "private": true,
-  "homepage": "https://eric-giannetti.github.io/Portifolio",
+  "homepage": "https://eric-giannetti.github.io/Portfolio",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
