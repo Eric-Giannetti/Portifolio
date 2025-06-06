@@ -1,4 +1,3 @@
-import React from "react";
 import { aboutMe } from "../data";
 
 export default function About() {

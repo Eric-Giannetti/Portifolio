@@ -1,5 +1,4 @@
 import { Experience, NavItem, Project, Skill, SocialLink } from "../types";
-import { Github, Linkedin, Mail } from "lucide-react";
 
 export const navItems: NavItem[] = [
   {
@@ -57,22 +56,22 @@ export const skills: Skill[] = [
 
 export const experiences: Experience[] = [
   {
-    title: "Frontend Developer",
-    company: "Tech Solutions Inc.",
+    title: "FullStack Developer",
+    company: "CEJAM",
     period: "2023 - Present",
-    description: "Developing modern web applications using React and TypeScript. Working closely with design teams to implement responsive and accessible user interfaces."
+    description: "development and maintenance of internal systems, utilizing a robust stack including .NET, C#, JavaScript, React Native, React.js, and MySQL. I actively participated in legacy system modernization projects and implemented significant interface improvements, with an enhanced focus on usability (UX)."
   },
   {
-    title: "Web Developer",
-    company: "Digital Agency",
-    period: "2021 - 2023",
-    description: "Created and maintained websites for various clients. Implemented responsive designs and improved website performance."
+    title: "Team Coordinator",
+    company: "General Claims",
+    period: "2021 - 2022",
+    description: "As a coordinator, I provided technical leadership, organized sprints, and mentored the team, leading to a 35% reduction in production bugs through code reviews and standardization."
   },
   {
-    title: "Junior Developer",
-    company: "Startup Innovations",
-    period: "2019 - 2021",
-    description: "Assisted in the development of web applications. Gained experience in frontend frameworks and agile methodologies."
+    title: "FullStack Developer",
+    company: "General Claims",
+    period: "2020 - 2023",
+    description: "robust ASP.NET MVC application development, integrating AngularJS and SQL Server, and creating RESTful APIs for CRUD solutions. I was responsible for implementing complex business rules in the insurance sector."
   }
 ];
 
@@ -113,14 +112,22 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/Eric-Giannetti",
     icon: "Github"
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/eric_giannetti/",
+    icon: "Instagram"
   }
 ];
 
 export const aboutMe = {
   title: "Eric Giannetti",
   subtitle: "Frontend Developer",
-  description: "I'm a passionate frontend developer with expertise in creating modern and responsive web applications. I specialize in React.js and have experience working with various frontend technologies to deliver exceptional user experiences.",
-  longDescription: "With several years of experience in web development, I've worked on various projects ranging from e-commerce platforms to portfolio websites. I'm dedicated to writing clean, efficient code and creating intuitive user interfaces. My goal is to continually improve my skills and stay updated with the latest trends in web development."
+  description: "I'm a passionate FullStack developer with expertise in creating modern and responsive web applications. I specialize in React.js/.Net Aplications and have experience working with various frontend technologies to deliver exceptional user experiences.",
+  longDescription: "Full Stack Developer with solid experience in C#/.NET, JavaScript, React.js, SQL Server and MySQL. " +
+      "I started my journey in technology in 2018, and since then, I've been evolving in both development and interface design. I've worked on complete web solutions with a focus on usability and performance.\n" +
+      "I was promoted to team coordinator at General Claims, an opportunity that broadened my strategic vision, leadership skills and project management.\n" +
+      "I have a degree in Systems Analysis and Development from FIAP and am constantly looking to evolve with new technologies, such as Cloud Computing and AI."
 };

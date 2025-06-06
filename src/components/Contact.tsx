@@ -1,5 +1,4 @@
-import React from "react";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import { socialLinks } from "../data";
 
 export default function Contact() {
@@ -11,6 +10,9 @@ export default function Contact() {
         return <Linkedin size={24} />;
       case "Github":
         return <Github size={24} />;
+        case "Instagram":
+          return <Instagram size={24} />;
+
       default:
         return null;
     }
@@ -75,12 +77,28 @@ export default function Contact() {
                 <div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">GitHub</p>
                   <a
-                    href="#"
+                    href="https://github.com/Eric-Giannetti"
                     className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    github.com/ericgiannetti
+                    github.com/Eric-Giannetti
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4">
+                  <Instagram size={24} />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Instagram</p>
+                  <a
+                    href="https://www.instagram.com/eric_giannetti/"
+                    className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Eric_Giannetti
                   </a>
                 </div>
               </div>

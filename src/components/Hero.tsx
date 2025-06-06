@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { aboutMe } from "../data";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaDocker, FaDatabase } from "react-icons/fa";
 import { SiDotnet, SiJavascript, SiMysql } from "react-icons/si";
 
@@ -31,7 +30,7 @@ const skillCards: SkillCard[] = [
   },
   {
     icon: <FaReact className="w-16 h-16 text-cyan-400" />,
-    name: "React.js",
+    name: "React.js/Native",
     description: "Creation of modern and interactive interfaces with React"
   },
   {
