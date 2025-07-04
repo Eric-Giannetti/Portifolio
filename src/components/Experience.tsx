@@ -1,7 +1,9 @@
 import { experiences } from "../data";
 import { Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Experience() {
+  const { t } = useTranslation();
   return (
     <section
       id="experience"
@@ -10,11 +12,11 @@ export default function Experience() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-            Work Experience
+            {t("experience_title")}
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            My professional journey and the positions I've held throughout my career.
+            {t("experience_description")}
           </p>
         </div>
 
@@ -43,13 +45,13 @@ export default function Experience() {
               >
                 <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1 transition-transform duration-300">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    {exp.title}
+                    {t(exp.title)}
                   </h3>
                   <div className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3">
-                    {exp.company} | {exp.period}
+                    {t(exp.company)} | {exp.period}
                   </div>
                   <p className="text-gray-700 dark:text-gray-300">
-                    {exp.description}
+                    {t(exp.description)}
                   </p>
                 </div>
               </div>

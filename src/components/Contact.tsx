@@ -1,7 +1,17 @@
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { socialLinks } from "../data";
 
 export default function Contact() {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate('/login');
+  };
+
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case "Mail":
@@ -26,18 +36,18 @@ export default function Contact() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-            Get In Touch
+            {t('contact_title')}
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            Feel free to reach out to me for any questions or opportunities.
+            {t('contact_description')}
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md">
             <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-              Contact Information
+              {t('contact_information')}
             </h3>
             <div className="space-y-6">
               <div className="flex items-center">
@@ -107,47 +117,47 @@ export default function Contact() {
 
           <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-md">
             <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-              Send Me a Message
+              {t('contact_title')}
             </h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Name
+                  {t('contact_name_label')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Your name"
+                  placeholder={t('contact_name_placeholder')}
                 />
               </div>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Email
+                  {t('contact_email_label')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Your email"
+                  placeholder={t('contact_email_placeholder')}
                 />
               </div>
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message
+                  {t('contact_message_label')}
                 </label>
                 <textarea
                   id="message"
                   rows={4}
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Your message"
+                  placeholder={t('contact_message_placeholder')}
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300"
               >
-                Send Message
+                {t('contact_send_button')}
               </button>
             </form>
           </div>

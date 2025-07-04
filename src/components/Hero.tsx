@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
-import { aboutMe } from "../data";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");
-  const roles = ["FullStack Developer", "UI/UX Designer", "Web Enthusiast"];
+  const { t } = useTranslation();
+  const roles = [t("hero_roles_0"), t("hero_roles_1"), t("hero_roles_2")];
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       const currentRole = roles[roleIndex];
@@ -50,7 +50,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-6 py-10 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white animate-fade-in">
-            {aboutMe.title}
+            {t("hero_greeting")}
           </h1>
           <div className="h-16 flex justify-center items-center">
             <h2 className="text-xl md:text-3xl font-medium text-blue-600 dark:text-blue-400">
@@ -59,20 +59,20 @@ export default function Hero() {
             </h2>
           </div>
           <p className="text-lg text-gray-700 dark:text-gray-300 my-6 max-w-2xl mx-auto animate-fade-in-up">
-            {aboutMe.description}
+            {t("hero_subtitle")}
           </p>
           <div className="mt-8 space-x-4 animate-fade-in-up">
             <a
               href="#projects"
               className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-300"
             >
-              View My Work
+              {t("hero_view_work")}
             </a>
             <a
               href="#contact"
               className="inline-block px-6 py-3 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-colors duration-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
             >
-              Contact Me
+              {t("hero_contact_me")}
             </a>
           </div>
         </div>

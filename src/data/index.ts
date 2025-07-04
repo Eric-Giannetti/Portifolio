@@ -1,30 +1,34 @@
 import { Experience, NavItem, Project, Skill, SocialLink } from "../types";
 
 export const navItems: NavItem[] = [
-  {
-    title: "Home",
-    href: "#home",
-  },
-  {
-    title: "About",
-    href: "#about",
-  },
-  {
-    title: "Experience",
-    href: "#experience",
-  },
-  {
-    title: "Skills",
-    href: "#skills",
-  },
-  {
-    title: "Projects",
-    href: "#projects",
-  },
-  {
-    title: "Contact",
-    href: "#contact",
-  },
+  // {
+  //   title: "Home",
+  //   href: "#home",
+  // },
+  // {
+  //   title: "About",
+  //   href: "#about",
+  // },
+  // {
+  //   title: "Experience",
+  //   href: "#experience",
+  // },
+  // {
+  //   title: "Skills",
+  //   href: "#skills",
+  // },
+  // {
+  //   title: "Projects",
+  //   href: "#projects",
+  // },
+  // {
+  //   title: "Contact",
+  //   href: "#contact",
+  // },
+  { key: "nav_about", href: "#about" },
+  { key: "nav_experience", href: "#experience" },
+  { key: "nav_projects", href: "#projects" },
+  { key: "nav_contact", href: "#contact" },
 ];
 
 export const skills: Skill[] = [
@@ -123,9 +127,9 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const aboutMe = {
-  title: "Eric Giannetti",
+  title: "hero_greeting",
   subtitle: "Frontend Developer",
-  description: "I'm a passionate FullStack developer with expertise in creating modern and responsive web applications. I specialize in React.js/.Net Aplications and have experience working with various frontend technologies to deliver exceptional user experiences.",
+  description: "hero_subtitle",
   longDescription: "Full Stack Developer with solid experience in C#/.NET, JavaScript, React.js, SQL Server and MySQL. " +
       "I started my journey in technology in 2018, and since then, I've been evolving in both development and interface design. I've worked on complete web solutions with a focus on usability and performance.\n" +
       "I was promoted to team coordinator at General Claims, an opportunity that broadened my strategic vision, leadership skills and project management.\n" +

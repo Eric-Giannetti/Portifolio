@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { aboutMe } from "../data";
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section
       id="about"
@@ -22,34 +24,34 @@ export default function About() {
           </div>
           <div className="md:w-1/2 md:pl-12">
             <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-              About Me
+              {t("about_title")}
             </h2>
             <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mb-6"></div>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              {aboutMe.longDescription}
+              {t("about_long_description")}
             </p>
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Name
+                  {t("about_label_name")}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">Eric Giannetti</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Email
+                  {t("about_label_email")}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">ericbgiant@gmail.com</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Role
+                  {t("about_label_role")}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">Frontend Developer</p>
+                <p className="text-gray-700 dark:text-gray-300">{t("about_role_frontend")}</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">
-                  Location
+                  {t("about_label_location")}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">Brazil</p>
               </div>
@@ -58,7 +60,7 @@ export default function About() {
               href="#contact"
               className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-300"
             >
-              Get In Touch
+              {t("contact_title")}
             </a>
           </div>
         </div>

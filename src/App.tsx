@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,18 +9,47 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
+
+interface MainContentProps {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+  changeLanguage: (lng: string) => void;
+  currentLanguage: string;
+}
+
+function MainContent({ darkMode, toggleDarkMode, changeLanguage, currentLanguage }: MainContentProps) {
+  return (
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <Header
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        changeLanguage={changeLanguage}
+        currentLanguage={currentLanguage}
+      />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  
-  // Check for user preference on initial load
+  const { i18n } = useTranslation();
+
   useEffect(() => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkMode(true);
     }
   }, []);
 
-  // Apply dark mode class to document
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -31,19 +62,35 @@ function App() {
     setDarkMode((prev) => !prev);
   };
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router basename="/Portifolio">
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <MainContent 
+              darkMode={darkMode}
+              toggleDarkMode={toggleDarkMode}
+              changeLanguage={changeLanguage}
+              currentLanguage={i18n.language}
+            />
+          } 
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={
+          <MainContent 
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            changeLanguage={changeLanguage}
+            currentLanguage={i18n.language}
+          />
+        } />
+      </Routes>
+    </Router>
   );
 }
 
