@@ -62,12 +62,12 @@ export default function Hero() {
             {t("hero_subtitle")}
           </p>
           <div className="mt-8 space-x-4 animate-fade-in-up">
-            <a
+            {/* <a
               href="#projects"
               className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-300"
             >
               {t("hero_view_work")}
-            </a>
+            </a> */}
             <a
               href="#contact"
               className="inline-block px-6 py-3 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-colors duration-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"

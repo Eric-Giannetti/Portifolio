@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { projects } from "../data";
 import { ExternalLink, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   return (
     <section
@@ -13,11 +15,11 @@ export default function Projects() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-            My Projects
+            {t('projects_title')}
           </h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            A selection of projects I've worked on throughout my career.
+            {t('projects_description')}
           </p>
         </div>
 
@@ -60,10 +62,10 @@ export default function Projects() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
-                  {project.title}
+                  {t(project.title)}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {project.description}
+                  {t(project.description)}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (

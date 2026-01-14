@@ -60,43 +60,49 @@ export const skills: Skill[] = [
 
 export const experiences: Experience[] = [
   {
-    title: "FullStack Developer",
-    company: "CEJAM",
-    period: "2023 - Present",
-    description: "development and maintenance of internal systems, utilizing a robust stack including .NET, C#, JavaScript, React Native, React.js, and MySQL. I actively participated in legacy system modernization projects and implemented significant interface improvements, with an enhanced focus on usability (UX)."
+    title: "exp_1_title",
+    company: "exp_1_company",
+    period: "2025 - Present",
+    description: "exp_1_description"
   },
   {
-    title: "Team Coordinator",
-    company: "General Claims",
+    title: "exp_2_title",
+    company: "exp_2_company",
+    period: "2023 - 2025",
+    description: "exp_2_description"
+  },
+  {
+    title: "exp_3_title",
+    company: "exp_3_company",
     period: "2021 - 2022",
-    description: "As a coordinator, I provided technical leadership, organized sprints, and mentored the team, leading to a 35% reduction in production bugs through code reviews and standardization."
+    description: "exp_3_description"
   },
   {
-    title: "FullStack Developer",
-    company: "General Claims",
+    title: "exp_4_title",
+    company: "exp_4_company",
     period: "2020 - 2023",
-    description: "robust ASP.NET MVC application development, integrating AngularJS and SQL Server, and creating RESTful APIs for CRUD solutions. I was responsible for implementing complex business rules in the insurance sector."
+    description: "exp_4_description"
   }
 ];
 
 export const projects: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A fully responsive e-commerce platform built with React and Node.js",
+    title: "project_1_title",
+    description: "project_1_description",
     image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     tags: ["React", "Node.js", "MongoDB", "Express"],
     link: "#"
   },
   {
-    title: "Task Management App",
-    description: "A modern task management application with user authentication",
+    title: "project_2_title",
+    description: "project_2_description",
     image: "https://images.pexels.com/photos/7648466/pexels-photo-7648466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     tags: ["React", "Firebase", "Tailwind CSS"],
     link: "#"
   },
   {
-    title: "Portfolio Website",
-    description: "A responsive portfolio website to showcase projects and skills",
+    title: "project_3_title",
+    description: "project_3_description",
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     link: "#"

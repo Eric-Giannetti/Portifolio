@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import BackToTop from "./components/BackToTop";
 
 interface MainContentProps {
   darkMode: boolean;
@@ -32,10 +33,11 @@ function MainContent({ darkMode, toggleDarkMode, changeLanguage, currentLanguage
         <About />
         <Experience />
         <Skills />
-        <Projects />
+        {/* <Projects /> */}
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

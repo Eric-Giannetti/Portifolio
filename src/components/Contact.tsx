@@ -1,15 +1,18 @@
-import { Mail, Linkedin, Github, Instagram } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Mail, Linkedin, Github, Instagram, Wrench, X, Calendar } from "lucide-react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { socialLinks } from "../data";
 
 export default function Contact() {
-  const navigate = useNavigate();
   const { t } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+  const [showCalendlyModal, setShowCalendlyModal] = useState(false);
+  const phoneNumber = "(11) 98259-7851";
+  const calendlyUrl = "https://calendly.com/ericbgiant";
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/login');
+    setShowModal(true);
   };
 
   const getIconComponent = (iconName: string) => {
@@ -28,11 +31,111 @@ export default function Contact() {
     }
   };
 
+  // Modal Component
+  const MaintenanceModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-md w-full mx-4">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            {t('contact_modal_title')}
+          </h2>
+          <button
+            onClick={() => setShowModal(false)}
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            aria-label="Close modal"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <div className="flex justify-center mb-6">
+          <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center text-yellow-600 dark:text-yellow-400">
+            <Wrench size={32} />
+          </div>
+        </div>
+        
+        <p className="text-center text-gray-700 dark:text-gray-300 mb-8">
+          {t('contact_modal_message')}
+        </p>
+        
+        <div className="space-y-4">
+          <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4 text-center">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              {t('contact_modal_phone')}
+            </p>
+            <a
+              href={`tel:${phoneNumber.replace(/\D/g, '')}`}
+              className="text-xl font-bold text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              {phoneNumber}
+            </a>
+          </div>
+          
+          <button
+            onClick={() => {
+              setShowModal(false);
+              setShowCalendlyModal(true);
+            }}
+            className="w-full py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+          >
+            <Calendar size={18} />
+            {t('schedule_meeting_button')}
+          </button>
+        </div>
+        
+        <button
+          onClick={() => setShowModal(false)}
+          className="w-full mt-6 py-2 px-4 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+        >
+          Fechar
+        </button>
+      </div>
+    </div>
+  );
+
+  // Calendly Modal Component
+  const CalendlyModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+        <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {t('schedule_meeting_title')}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              {t('schedule_meeting_subtitle')}
+            </p>
+          </div>
+          <button
+            onClick={() => setShowCalendlyModal(false)}
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            aria-label="Close modal"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <div className="flex-1 overflow-auto">
+          <iframe
+            src={calendlyUrl}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            title="Schedule a meeting with Eric"
+            style={{ minHeight: '600px' }}
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section
       id="contact"
       className="py-20 bg-white dark:bg-gray-900"
     >
+      {showModal && <MaintenanceModal />}
+      {showCalendlyModal && <CalendlyModal />}
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
@@ -158,6 +261,14 @@ export default function Contact() {
                 className="w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300"
               >
                 {t('contact_send_button')}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowCalendlyModal(true)}
+                className="w-full py-3 my-3 px-6 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                <Calendar size={18} />
+                {t('schedule_meeting_button')}
               </button>
             </form>
           </div>
